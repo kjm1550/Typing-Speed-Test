@@ -38,8 +38,13 @@
 				</p>
 			</div>
 			<div id="test-textbox">
-				<p id="timer">60 Seconds</p>
-				<button type="button" id="testAgain">Restart Test</button>
+				<div id="optionBox">
+					<p id="timer">60 Seconds</p>
+					<button type="button" id="testAgain">Restart Test</button>
+					<button type="button" class="time-button" data-time="30">30 Seconds</button>
+					<button type="button" id="default-time-button" class="time-button" data-time="60" disabled="true">1 Minute</button>
+					<button type="button" class="time-button" data-time="120">2 Minutes</button>
+				</div>
 				<textarea id="textbox" rows="10" cols="50"></textarea>
 			</div>
 			<div id="results-box">

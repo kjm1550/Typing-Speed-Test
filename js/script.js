@@ -2,6 +2,8 @@ const textArea = document.querySelector('#textbox');
 const result = document.querySelector('#results');
 const timer = document.querySelector('#timer');
 const testAgain = document.querySelector('#testAgain');
+const timeButtons = document.querySelectorAll('.time-button');
+const defaultTimeButton = document.querySelector('#default-time-button');
 
 let testStarted = false;
 let timeUp = false;
@@ -12,12 +14,13 @@ let timerTimeOut;
 
 function startTest() {
 	if (testStarted) return;
-	// restart the test.
 	testStarted = true;
 
 	//update the timer and set time
 	timeUp = false;
-	updateTimer(time);
+	runTimer(time);
+
+	disableAllTimeButton();
 
 	// run for set amount of time
 	endGame = setTimeout(() => {
@@ -30,7 +33,7 @@ function startTest() {
 	}, time);
 }
 
-function updateTimer(time) {
+function runTimer(time) {
 	timerTimeOut = setTimeout(() => {
 		// update timer every second
 		time -= 1000;
@@ -40,7 +43,7 @@ function updateTimer(time) {
 		if (newTime < 0) {
 		}
 		// keeps the timer updated if the time is not up
-		if (!timeUp) updateTimer(time);
+		if (!timeUp) runTimer(time);
 	}, 1000);
 }
 
@@ -61,8 +64,33 @@ function restartTest() {
 	clearTimeout(endGame);
 	clearTimeout(timerTimeOut);
 	result.textContent = '0 WPM and 0 CPM';
+	resetTimeButtons();
+}
+
+function changeTime() {
+	// Change the time left on the clock
+	const seconds = parseInt(this.dataset.time);
+	timer.textContent = seconds + ' Seconds';
+	time = seconds * 1000;
+
+	// Disabled the buttons
+	enableAllTimeButton();
+	this.disabled = true;
+}
+
+function disableAllTimeButton() {
+	timeButtons.forEach((timeButton) => (timeButton.disabled = true));
+}
+function enableAllTimeButton() {
+	timeButtons.forEach((timeButton) => (timeButton.disabled = false));
+}
+function resetTimeButtons() {
+	time = 60000;
 	timer.textContent = '60 Seconds';
+	enableAllTimeButton();
+	defaultTimeButton.disabled = true;
 }
 
 textArea.addEventListener('input', startTest);
 testAgain.addEventListener('click', restartTest);
+timeButtons.forEach((timeButton) => timeButton.addEventListener('click', changeTime));
