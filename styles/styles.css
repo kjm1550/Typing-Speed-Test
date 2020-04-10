@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  color: #8C5E58;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  background-color: #FFF7F8;
 }
 
 #main {
@@ -11,17 +17,80 @@
   display: grid;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
-  grid-gap: 10px;
+  font-size: 1.2em;
+  border: #FE7860 8px solid;
+  border-radius: 4px;
 }
 
-#intro, #results-box {
+#main .section {
+  padding: 18px;
+}
+
+#main #intro, #main #results-box {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 3;
   text-align: center;
+  font-size: 1.2em;
+  background-color: #A9F0D1;
 }
 
-textarea {
+#main #test-example, #main #test-textbox {
+  border-top: #FE7860 8px solid;
+  border-bottom: #FE7860 8px solid;
+}
+
+#main #test-textbox {
+  background-color: #FFA69E;
+  position: relative;
+}
+
+#main #test-textbox .holder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-65%);
+          transform: translateY(-65%);
+  width: calc(100% - 36px);
+}
+
+#main #test-textbox #optionBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 12px;
+}
+
+#main #test-textbox #optionBox #timer {
+  font-weight: bold;
+}
+
+#main #test-textbox #optionBox button {
+  width: 50%;
+  margin: 2px;
+  font-size: .9em;
+  background-color: #A9F0D1;
+  border-color: #FE7860;
+}
+
+#main #test-textbox #optionBox button:disabled {
+  background-color: #FFF7F8;
+}
+
+#main #test-textbox textarea {
   width: 100%;
+  background-color: #FFF7F8;
+  border: #FE7860 2px solid;
+  font-size: 1em;
+}
+
+#main #results-box {
+  font-weight: bold;
 }
 /*# sourceMappingURL=styles.css.map */

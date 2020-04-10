@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="main">
-			<div id="intro">
+			<div id="intro" class="section">
 				<h1>Typing Speed Test</h1>
 				<p>
 					Try to type out as much of the paragraphs on the left as you can. Once you start typing in the text box the timer will
@@ -18,7 +18,7 @@
 					displayed at the bottom of the page.
 				</p>
 			</div>
-			<div id="test-example">
+			<div id="test-example" class="section">
 				<p>
 					There once lived an old man and an old woman who were peasants and had to work hard to earn their daily bread. The old
 					man used to go to fix fences and do other odd jobs for the farmers around, and while he was gone the old woman, his
@@ -37,17 +37,19 @@
 					all already know this and you will too.
 				</p>
 			</div>
-			<div id="test-textbox">
-				<div id="optionBox">
-					<p id="timer">60 Seconds</p>
-					<button type="button" id="testAgain">Restart Test</button>
-					<button type="button" class="time-button" data-time="30">30 Seconds</button>
-					<button type="button" id="default-time-button" class="time-button" data-time="60" disabled="true">1 Minute</button>
-					<button type="button" class="time-button" data-time="120">2 Minutes</button>
+			<div id="test-textbox" class="section">
+				<div class="holder">
+					<div id="optionBox">
+						<p id="timer">60 Seconds</p>
+						<button type="button" id="testAgain">Restart Test</button>
+						<button type="button" class="time-button" data-time="30">30 Seconds</button>
+						<button type="button" id="default-time-button" class="time-button" data-time="60" disabled="true">1 Minute</button>
+						<button type="button" class="time-button" data-time="120">2 Minutes</button>
+					</div>
+					<textarea id="textbox" rows="10" cols="50"></textarea>
 				</div>
-				<textarea id="textbox" rows="10" cols="50"></textarea>
 			</div>
-			<div id="results-box">
+			<div id="results-box" class="section">
 				<p>You typed at:</p>
 				<p id="results">0 WPM and 0 CPM</p>
 			</div>

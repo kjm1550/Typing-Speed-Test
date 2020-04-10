@@ -1,6 +1,13 @@
+@import 'variables'
+
 *
     margin: 0
     padding: 0
+    color: $black-rose
+    font-family: Arial, Helvetica, sans-serif
+    
+html
+    background-color: $white-snow
 
 #main
     max-width: 1200px
@@ -8,12 +15,62 @@
     margin: 50px auto
     display: grid
     grid-template-columns: 50% 50%
-    grid-gap: 10px
+    font-size: 1.2em
+    border: $red-bittersweet 8px solid
+    border-radius: 4px
 
-#intro, #results-box
-    grid-column-start: 1
-    grid-column-end: 3
-    text-align: center
+    .section
+        padding: 18px
 
-textarea
-    width: 100%
+
+    #intro, #results-box
+        grid-column-start: 1
+        grid-column-end: 3
+        text-align: center
+        font-size: 1.2em
+        background-color: $blue-mint
+
+
+    #test-example, #test-textbox 
+        border-top: $red-bittersweet 8px solid
+        border-bottom: $red-bittersweet 8px solid
+
+    #test-textbox 
+        background-color: $pink-salmon
+        position: relative
+
+        .holder
+            position: absolute
+            top: 50%
+            transform: translateY(-65%)
+            width: calc(100% - 36px)
+
+        #optionBox
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding-bottom: 12px
+
+            #timer
+                font-weight: bold
+
+            button
+                width: 50%
+                margin: 2px
+                font-size: .9em
+                background-color: $blue-mint
+                border-color: $red-bittersweet
+                &:disabled
+                    background-color: $white-snow
+
+        textarea
+            width: 100%
+            background-color: $white-snow
+            border: $red-bittersweet 2px solid
+            font-size: 1em
+
+    #results-box
+        font-weight: bold
+
+
+
