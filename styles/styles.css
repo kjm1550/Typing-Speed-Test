@@ -19,7 +19,7 @@ html {
       grid-template-columns: 50% 50%;
   font-size: 1.2em;
   border: #FE7860 8px solid;
-  border-radius: 4px;
+  border-radius: 28px;
 }
 
 #main .section {
@@ -35,6 +35,16 @@ html {
   background-color: #A9F0D1;
 }
 
+#main #intro {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#main #results-box {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 #main #test-example, #main #test-textbox {
   border-top: #FE7860 8px solid;
   border-bottom: #FE7860 8px solid;
@@ -43,14 +53,6 @@ html {
 #main #test-textbox {
   background-color: #FFA69E;
   position: relative;
-}
-
-#main #test-textbox .holder {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-65%);
-          transform: translateY(-65%);
-  width: calc(100% - 36px);
 }
 
 #main #test-textbox #optionBox {
