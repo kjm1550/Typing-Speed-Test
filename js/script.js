@@ -54,11 +54,12 @@ function runTimer(time) {
 function updateWPM() {
 	//remove empty strings in the array
 	let typedContent = textArea.value.split(' ').filter((i) => i);
+	console.log(typedContent);
 
 	//create a sting of just the charactors
 	const nowString = typedContent.join('');
-
-	result.textContent = typedContent.length + ' WPM and ' + nowString.length + ' CPM';
+	console.log(nowString);
+	result.textContent = typedContent.length * (60000 / time) + ' WPM and ' + nowString.length * (60000 / time) + ' CPM';
 }
 
 function restartTest() {
@@ -96,8 +97,10 @@ function resetTimeButtons() {
 }
 
 function changeParagraphs() {
-	paragraph.forEach((para) => (para.textContent = options[Math.floor(Math.random() * 6)]));
+	paragraph.forEach((para) => (para.textContent = options[Math.floor(Math.random() * 15)]));
 }
+
+changeParagraphs();
 
 textArea.addEventListener('input', startTest);
 testAgain.addEventListener('click', restartTest);
